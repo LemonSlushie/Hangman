@@ -1,0 +1,108 @@
+import random
+
+ # defining the beginning of the game
+name = input ("Enter Name")
+greeting = ("Hello", name)
+if name :
+    print (greeting)
+    print ("You have 10 chances to guess the movie")
+    
+
+#defining hangman
+def hangman():
+    word = ("despicable me", "american psycho", "matrix", "jurastic park", "zootopia")
+    validLetters = 'abcdefghijklmnopqrstubwxyz'
+    turns = 10
+    guessmade = ''
+    
+    while word > 0:
+        correct = ""
+        missed = 0
+        
+        # now instructing validLetters & conditioning correct
+        # for the letter in word, if the letter guessed is correct add the letter, if not leave blank
+        for letter in word:
+            if letter in guessmade:
+                correct = correct + letter
+            else:
+                correct = correct + "_" + "_"
+        # if word is correct print winner        
+        if corect == word:
+            print (correct)
+            print ("Winner")
+            print ("You saved him!")
+            break
+            #break ends the loop
+         
+        # print guess the word if correct
+        print ("Guess the word", correct)
+        guess = input()
+        
+        #if guess made in the valid letters, add the guessed letter, if else print enter valid character
+        if guess in validLetters:
+            guessmade = guessmade + guess
+        else:
+            print ("Enter valid character")
+            guess = input()
+            
+        if guess not in word:
+            turns = turns - 1
+    
+        if turns == 9:
+            print ("9 turns left")
+            print("  --------  ")
+        if turns == 8:
+            print ("8 turns left")
+            print("  --------  ")
+            print("     O      ")
+        if turns == 7:
+            print ("7 turns left")
+            print("  --------  ")
+            print("     O      ")
+            print("     |      ")
+        if turns == 6:
+            print ("6 turns left")
+            print("  --------  ")
+            print("     O      ")
+            print("     |      ")
+            print("    /       ")
+        if turns == 5:
+            print ("5 turns left")
+            print("  --------  ")
+            print("     O      ")
+            print("     |      ")
+            print("    / \     ")
+        if turns == 4:
+            print ("4 turns left")
+            print("  --------  ")
+            print("   \ O      ")
+            print("     |      ")
+            print("    / \     ")
+        if turns == 3:
+            print ("3 turns left")
+            print("  --------  ")
+            print("   \ O /    ")
+            print("     |      ")
+            print("    / \     ")
+        if turns == 2:
+            print ("2 turns left")
+            print("  --------  ")
+            print("   \ O /|   ")
+            print("     |      ")
+            print("    / \     ")
+        if turns == 1:
+            print ("1 turns left")
+            print("Choose your letter wisely now...")
+            print("  --------  ")
+            print("   \ O_|/   ")
+            print("     |      ")
+            print("    / \     ")
+        if turns == 0:
+            print ("0 turns left")
+            print("You lose...")
+            print("...You let an innocent man die")
+            print("  --------  ")
+            print("     O_|    ")
+            print("    /|\      ")
+            print("    / \     ")
+            break
